@@ -2,7 +2,8 @@
 layout: splash
 permalink: /
 header:
-  overlay_color: "#0f172a"
+  overlay_color: "#5e616c"
+  overlay_filter: "linear-gradient(135deg, rgba(15,23,42,0.55) 0%, rgba(14,80,155,0.45) 100%)"
   overlay_image: /images/locker_dark.jpg
   cta_label: "<i class='fa fa-download'></i> Get OpenPGP Software"
   cta_url: "/software/"
