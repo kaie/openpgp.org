@@ -26,3 +26,5 @@ group :jekyll_plugins do
   gem "jekyll-last-modified-at"
   # gem "jekyll-archives"
 end
+
+gem "webrick", "~> 1.9"

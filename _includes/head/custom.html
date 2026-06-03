@@ -9,4 +9,184 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
+<style>
+  /* ── Design tokens ── */
+  :root {
+    --accent:      #0ea5e9;
+    --accent-dark: #0369a1;
+    --navy:        #0f172a;
+    --navy-mid:    #1e293b;
+    --slate:       #64748b;
+    --border:      #e2e8f0;
+  }
+
+  /* ── Typography ── */
+  body, .masthead, .page__content, .sidebar,
+  h1, h2, h3, h4, h5, h6, .btn, input, select, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI",
+                 system-ui, ui-sans-serif, sans-serif !important;
+  }
+
+  /* ── Masthead / nav ── */
+  .masthead {
+    background: #fff !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+  .masthead__inner-wrap {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .site-title {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--navy) !important;
+    font-size: 1.15rem !important;
+  }
+  .greedy-nav a {
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+  }
+  .greedy-nav .visible-links a:hover,
+  .greedy-nav .visible-links a:focus {
+    color: var(--accent-dark) !important;
+  }
+  .greedy-nav .visible-links a::before {
+    background: var(--accent) !important;
+  }
+
+  /* ── Hero (splash page) ── */
+  .page__hero--overlay {
+    background-color: var(--navy) !important;
+    background-blend-mode: luminosity !important;
+    padding: 5em 1em !important;
+  }
+  .page__hero--overlay .page__title {
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+  }
+  .page__hero--overlay .page__lead {
+    font-size: 1.2em !important;
+    opacity: 0.92 !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    transition: background 0.15s, box-shadow 0.15s, transform 0.15s !important;
+  }
+  .btn--light-outline,
+  .btn--inverse {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #fff !important;
+  }
+  .btn--light-outline:hover,
+  .btn--inverse:hover {
+    background: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+    box-shadow: 0 4px 14px rgba(14,165,233,0.35) !important;
+    transform: translateY(-1px) !important;
+    color: #fff !important;
+  }
+  .btn--primary {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+  }
+  .btn--primary:hover {
+    background: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+    box-shadow: 0 4px 14px rgba(14,165,233,0.35) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* ── Feature row (home page cards) ── */
+  .feature__wrapper {
+    border-top: none !important;
+    gap: 1.5rem;
+  }
+  .feature__item {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07), 0 6px 20px rgba(0,0,0,0.06) !important;
+    transition: box-shadow 0.2s ease, transform 0.2s ease !important;
+    background: #fff !important;
+  }
+  .feature__item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1), 0 12px 36px rgba(0,0,0,0.09) !important;
+    transform: translateY(-3px) !important;
+  }
+  .archive__item-body {
+    padding: 1rem 1.25rem 1.5rem !important;
+  }
+  .archive__item-title {
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    color: var(--navy) !important;
+    font-size: 1.05em !important;
+    margin-top: 0 !important;
+  }
+
+  /* ── Intro excerpt (home page) ── */
+  .page__content p:first-child {
+    font-size: 1.1em !important;
+    color: var(--slate) !important;
+    line-height: 1.7 !important;
+  }
+
+  /* ── Page headings ── */
+  .page__title {
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--navy) !important;
+  }
+  h2 { color: var(--navy-mid) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
+  h3 { color: var(--navy-mid) !important; font-weight: 600 !important; }
+
+  /* ── Links ── */
+  a { color: var(--accent-dark) !important; }
+  a:hover { color: var(--accent) !important; }
+  a:visited { color: var(--accent-dark) !important; }
+
+  /* ── Sidebar nav ── */
+  .nav__title {
+    background: var(--navy) !important;
+    border-radius: 8px 8px 0 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em !important;
+  }
+  .nav__list .active > a,
+  .nav__list .active > a:visited {
+    color: var(--accent-dark) !important;
+    font-weight: 600 !important;
+  }
+  .nav__list a:hover {
+    color: var(--accent-dark) !important;
+  }
+
+  /* ── Footer ── */
+  .page__footer {
+    background: var(--navy) !important;
+    color: #94a3b8 !important;
+  }
+  .page__footer a {
+    color: #94a3b8 !important;
+  }
+  .page__footer a:hover {
+    color: #fff !important;
+  }
+  .page__footer-follow .social-icons .svg-inline--fa {
+    color: inherit !important;
+  }
+
+  /* ── Misc polish ── */
+  .page__content { line-height: 1.75 !important; }
+  code, pre { border-radius: 6px !important; }
+  .toc .nav__title { border-radius: 8px 8px 0 0 !important; }
+</style>
+
 <!-- end custom head snippets -->
